@@ -1,5 +1,5 @@
 type Params = {
-  query: string
+  location: string
 }
 
 export type LocationPageProps = {
