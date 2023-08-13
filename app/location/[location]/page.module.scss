@@ -1,7 +1,7 @@
 $bp: 768px;
 
 .container {
-  height: calc(100vh - 5rem);
+  height: calc(100dvh - 5rem);
   width: 100%;
   padding: 1rem;
   background: var(--color-primary);
