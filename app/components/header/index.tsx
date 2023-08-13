@@ -1,6 +1,6 @@
 'use client'
 
-import { useMemo } from 'react'
+import { useEffect, useMemo, useRef } from 'react'
 import styles from './header.module.scss'
 import { useRouter, usePathname } from 'next/navigation'
 import { motion } from 'framer-motion'
@@ -15,6 +15,7 @@ type SearchFormEvent = React.FormEvent<HTMLFormElement> & {
 }
 
 export const Header = () => {
+  const ref = useRef<HTMLInputElement>(null)
   const router = useRouter()
   const pathname = usePathname()
 
@@ -34,6 +35,19 @@ export const Header = () => {
     router.push(`/location/${value}`)
   }
 
+  const handleFocus = () => {
+    if (ref.current) {
+      ref.current.value = ''
+      ref.current.focus()
+    }
+  }
+
+  useEffect(() => {
+    if (locationDisplayed) return
+
+    handleFocus()
+  }, [locationDisplayed])
+
   return (
     <motion.header
       initial={false}
@@ -41,14 +55,11 @@ export const Header = () => {
         y: 0,
         height: locationDisplayed ? '5rem' : '100vh',
         transition: {
-          duration: 0.3,
+          duration: 0.2,
           ease: 'easeInOut'
         }
       }}
-      className={[
-        styles.header,
-        locationDisplayed ? styles['header--reduced'] : ''
-      ].join(' ')}
+      className={styles.header}
     >
       <form onSubmit={handleSubmit}>
         <label
@@ -62,6 +73,7 @@ export const Header = () => {
         </label>
         <div className={styles.search}>
           <input
+            ref={ref}
             name='search'
             type='search'
             placeholder='Enter a town or city'

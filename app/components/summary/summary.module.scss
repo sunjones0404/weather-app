@@ -1,0 +1,47 @@
+$bp: 768px;
+
+.title,
+.subtitle,
+.temperature {
+  color: var(--color-white);
+}
+
+.title {
+  font-size: 3rem;
+  font-weight: 800;
+  line-height: 1.2;
+  margin-bottom: 0.5rem;
+
+  @media (min-width: $bp) {
+    font-size: 4rem;
+  }
+}
+
+.subtitle {
+  font-size: 1.5rem;
+  font-weight: 400;
+  margin-bottom: 1rem;
+
+  @media (min-width: $bp) {
+    font-size: 2rem;
+  }
+}
+
+.temperature {
+  font-size: 3rem;
+  font-weight: 800;
+
+  @media (min-width: $bp) {
+    font-size: 5rem;
+  }
+}
+
+.summary {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.icon {
+  margin-left: 1rem;
+}

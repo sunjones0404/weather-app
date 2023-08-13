@@ -1,40 +1,15 @@
 $bp: 768px;
 
 .container {
-  height: 100%;
+  height: calc(100vh - 5rem);
   width: 100%;
   padding: 1rem;
+  background: var(--color-primary);
+  background: linear-gradient(160deg, #0093e9 0%, #80d0c7 100%);
+  overflow-y: auto;
+  overflow-x: hidden;
 
   @media (min-width: $bp) {
     padding: 2rem;
-  }
-}
-
-.title,
-.subtitle {
-  background: var(--color-primary);
-  background: linear-gradient(43deg, #4158d0 0%, #c850c0 40%, #ffcc70 80%);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-.title {
-  font-size: 2rem;
-  font-weight: 900;
-  line-height: 1.2;
-  margin-bottom: 0.5rem;
-
-  @media (min-width: $bp) {
-    font-size: 3rem;
-  }
-}
-
-.subtitle {
-  font-size: 1.5rem;
-  font-weight: 900;
-
-  @media (min-width: $bp) {
-    font-size: 2rem;
   }
 }
