@@ -53,7 +53,7 @@ export const Header = () => {
       initial={false}
       animate={{
         y: 0,
-        height: locationDisplayed ? '5rem' : '100vh',
+        height: locationDisplayed ? '5rem' : '100dvh',
         transition: {
           duration: 0.2,
           ease: 'easeInOut'
