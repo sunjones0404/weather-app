@@ -10,7 +10,7 @@ export default async function Location({
 }: LocationPageProps) {
   const getWeather = async () => {
     const result = await fetch(
-      process.env.BASE_URL + `/api/weather?location=${location}`
+      `${process.env.BASE_URL}/api/weather?location=${location}`
     )
 
     return result.json()
