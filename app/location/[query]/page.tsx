@@ -1,6 +1,6 @@
 import styles from './page.module.scss'
 import { LocationPageProps } from '@/types/location.type'
-import { getWeather } from '../../api/route'
+import { GET } from '../../api/route'
 import { Summary } from '@/app/components/summary'
 import { HourlyForecast } from '@/app/components/hourly-forecast'
 import { DailyForecast } from '@/app/components/daily-forecast'
@@ -9,7 +9,7 @@ import { Error } from '@/app/components/error'
 export default async function Location({
   params: { query }
 }: LocationPageProps) {
-  const response = await getWeather(query)
+  const response = await GET(query)
 
   if (response.error) {
     return (

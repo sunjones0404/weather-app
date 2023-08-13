@@ -1,8 +1,6 @@
 import { WeatherResponse } from '@/types/weather.type'
 
-export const getWeather = async (
-  location: string
-): Promise<WeatherResponse> => {
+export const GET = async (location: string): Promise<WeatherResponse> => {
   const res = await fetch(
     `http://api.weatherapi.com/v1/forecast.json?key=${process.env.NEXT_PUBLIC_WEATHER_API_KEY}&q=${location}&aqi=no&days=5`
   )
